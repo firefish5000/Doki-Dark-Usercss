@@ -1,0 +1,235 @@
+/* ==UserStyle==
+@name           Doki Dark
+@namespace      https://github.com/FireFish5000/Doki-Dark-Usercss
+@version        1.0.0
+@description    A customizable usercss written with Stylus browser extention in mind, intended to make doki.co dark
+@author         FireFish5000
+@var color main-bg "Main BG Color" #000
+@var color main-fg "Main Text Color" #00ffaa
+@var color sec-bg "Secondary BG Color" #202020
+@var color sec-fg "Secondare Text Color" #0cf
+@var color link-fg "Link Color" #000
+@var color link-fg-hov "Link Hover Color" #00ffaa
+@var color nav-fg "Navbar Text Color" #00ffaa
+@var color nav-bg "Navbar Background Color" #000
+@var color nav-fg-hov "Navbar Hover Text Color" #00ffaa
+@var color nav-bg-hov "Navbar Hover Background Color" #202
+==/UserStyle== */
+
+@-moz-document domain("doki.co") {
+/*
+--- Notes ---
+    Not Thoroughly tested, minimal testing done on
+    homepage, category page, and comments page only.
+-- 2013-11-14 --
+Changelog:
+    a complete rewrite.
+    You may notice a much more compact and understandable
+    style was used.
+    You may wish to blacklist this style for doki's XDCC
+    site, as that site comes with easily changeable skins.
+-- 2014-09-29 --
+    Introducing css vars
+    converting style to use variables for easier
+    customizations/maintenance. Fixed hover on visited links.
+    Normalized colors slightly.
+Notes:
+    I am still in the process of converting this to use variables.
+    The variable names are likely to change and they may
+    appear/vanish without warning. There were no major styling
+    changes during this revision (though some notible ones are planned)
+    I will probably have to copy :root over to cbox's css..
+TODO:
+    Finalize variables and add styling options (however you do that) for
+    easy customization on userstyles.org.
+    Test/implement&fix css for non main doki pages.
+-- 2019-12-04 --
+    I migrated this locally a year ago, but largly stopped maintaining it bc I like how it looks
+    and nothing major has been broken since the site is rather static.
+    Now using stylus, and thus can now use stylus runtime-configurable variables to customize the theme.
+    I have no intention of supporting stylish or user-styles anymore.
+    Stylus (the extention/project) still needs a lot of tlc, but is very usable as is.
+    Main issue left is developing a community for it, which I am hopefull for.
+    Although I believe they are definitly shooting themselves in the foot with
+    their current domain that, imho, screams phishing/malware/spam site (add0n.com).
+*/
+:root { /* Variables */
+	/*--main-bg:			var(--main-bg);	/* var(--main-bg) */
+	--main-color:		var(--main-fg);	/*	var(--main-color) */
+	/*--sec-bg:			var(--sec-bg);*/
+	--sec-color:		var(--sec-fg);
+	--sec-bg-hov:		var(--sec-bg);
+	--sec-color-hov:	var(--link-fg-hov);
+
+	--link-color:		var(--link-fg);	/* var(--link-color) */
+	--link-color-hov: var(--link-fg-hov);	/* var(--link-color-hov) */	
+	/*--nav-bg:			var(--nav-bg);
+	--nav-bg-hov:		var(--nav-bg-hov);	/* var(--nav-bg-hov) */
+	--nav-color-hov:	var(--nav-fg-hov);	/* var(--nav-color-hov) */
+	--nav-color:		var(--nav-fg);	/* var(--nav-color) */
+	
+	--post-head-color:		var(--sec-color);
+	--post-head-bg:			var(--sec-bg);
+	--post-head-color-hov:	var(--sec-color-hov);
+	--post-head-bg-hov:		var(--sec-bg-hov);
+	--post-foot-bg:			var(--sec-bg);
+}
+body {
+  background-color: var(--main-bg) !important;
+  color: var(--main-color) !important;
+}
+
+:link:hover,:visited:hover {
+  color: var(--link-color-hov) !important;
+}
+
+/* Banner Image, XDCC header --> */
+#header {
+    background-color: var(--main-bg) !important;
+    color: #ffffff !important;
+}
+/* <-- Image Nanner, XDCC header */
+
+
+/* Top Menu (Nav) ---> */
+#menu1 {
+  background-color: var(--nav-bg) !important;
+  color: var(--nav-color) !important;
+}
+#menu1 #rmenu2 {
+  background-color: var(--nav-bg) !important;
+  color: var(--nav-color) !important;
+}
+#menu1 #rmenu2 .page_item a {
+  background-color: var(--nav-bg) !important;
+  color: var(--nav-color) !important;
+}
+
+#menu1 #rmenu2 .page_item a:hover {
+  background-color: var(--nav-bg-hov) !important;
+  color: var(--nav-color-hov) !important;
+}
+/* <--- Top Menu */
+
+/* Left SideBar (Polls&Catagories) */
+#left {
+    background-color: var(--main-bg) !important;
+}
+
+/* !---BEGIN-MAIN-BODY---! */
+/* Header --> */
+.post-headline h2,.post-headline a {
+  background-color:	var(--post-head-bg) !important;
+  color:					var(--post-head-color) !important;
+}
+.post-headline h2:hover,.post-headline a:hover {
+  color:	var(--link-color-hov) !important;
+}
+/* <-- Header */
+.post-footer {
+  background-color:	var(--post-foot-bg) !important;
+  color: 				var(--post-foot-color) !important;
+}
+/* !---END-MAIN-BODY---! */
+
+/* Right Sidebar ---> */
+#right-inner { /* Inner Right SideBar (Show Status By Season) */
+  background-color: var(--main-bg) !important;
+}
+/* Far Right SideBar (SearchBar, DokiLinks, Donate, Links, ChatBox, Links)*/
+#right {
+  background-color: var(--main-bg) !important;
+}
+#footer {
+  background-color: var(--main-bg) !important;
+  border-color: #141414 !important;
+}
+.searchfield .text {
+  background-color: #202020 !important;
+  border-width: 1px !important;
+  border-color: #141414 !important;
+  color: #980000 !important;  
+}
+/* <--- Right Sidebar */
+
+/* General */
+.subcat { /* doki.co/projects */
+  background-color: #202020 !important;
+  color: red !important;
+  border-color: #202020 !important;
+}
+.navigation-top,.navigation-bottom { /* "newer entries" / "older entries" at bottom of page(top is gone)*/
+  background-color: #141414 !important;
+  border-color: #00ffea !important;
+  border-width: 1px !important;
+}
+/* Comments */
+.commentlist * {
+  background-color: var(--main-bg);
+  border-color: #141414 !important;
+  border-width: 1px !important;
+}
+#respond {
+  background-color: #141414 !important;
+  border-width: 1px !important;
+}
+#commentform input,#commentform #comment {
+  background-color: #202020 !important;
+  color: #980000 !important;
+  border-width: 1px !important;
+}
+
+/* None Core CSS. */
+/* XDDC ---> */
+#searchdiv {
+  background-color: var(--main-bg) !important;
+}
+#start {
+  background-color: var(--main-bg) !important;
+}
+.footer {
+  background-color: var(--main-bg) !important;
+}
+/* <--- XDDC */
+}
+
+@-moz-document domain("cbox.ws") {
+:root { /* Variables */
+	/*--main-bg:			var(--main-bg);	/* var(--main-bg) */
+	--main-color:		var(--main-fg);	/*	var(--main-color) */
+	/*--sec-bg:			var(--sec-bg);*/
+	--sec-color:		var(--sec-fg);
+	--sec-bg-hov:		var(--sec-bg);
+	--sec-color-hov:	var(--link-fg-hov);
+
+	--link-color:		var(--link-fg);	/* var(--link-color) */
+	--link-color-hov: var(--link-fg-hov);	/* var(--link-color-hov) */	
+	/*--nav-bg:			var(--nav-bg);
+	--nav-bg-hov:		var(--nav-bg-hov);	/* var(--nav-bg-hov) */
+	--nav-color-hov:	var(--nav-fg-hov);	/* var(--nav-color-hov) */
+	--nav-color:		var(--nav-fg);	/* var(--nav-color) */
+	
+	--post-head-color:		var(--sec-color);
+	--post-head-bg:			var(--sec-bg);
+	--post-head-color-hov:	var(--sec-color-hov);
+	--post-head-bg-hov:		var(--sec-bg-hov);
+	--post-foot-bg:			var(--sec-bg);
+}
+body{
+background-color: var(--main-bg) !important;
+}
+td.stxt {
+    color: var(--main-color) !important;
+    background-color: var(--main-bg) !important;
+}
+td.stxt2 {
+    color: var(--sec-color) !important;
+    background-color: var(--sec-bg) !important;
+}
+td.stxt2 a:hover {
+    color: var(--sec-color-hov) !important;
+}
+td.stxt a:hover {
+    color: var(--link-color-hov) !important;
+}
+}
