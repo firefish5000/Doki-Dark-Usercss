@@ -4,6 +4,7 @@
 @version        1.0.0
 @description    A customizable usercss written with Stylus browser extention in mind, intended to make doki.co dark
 @author         FireFish5000
+@updateURL      https://github.com/firefish5000/Doki-Dark-Usercss/raw/master/doki-dark.user.css
 @var color main-bg "Main BG Color" #000
 @var color main-fg "Main Text Color" #00ffaa
 @var color sec-bg "Secondary BG Color" #202020
